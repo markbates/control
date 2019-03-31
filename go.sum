@@ -260,8 +260,6 @@ github.com/gobuffalo/mw-csrf v0.0.0-20180802151833-446ff26e108b/go.mod h1:sbGtb8
 github.com/gobuffalo/mw-csrf v0.0.0-20190129204204-25460a055517 h1:pOOXwl1xPLLP8oZw3e3t2wwrc/KSzmlRBcaQwGpG9oo=
 github.com/gobuffalo/mw-csrf v0.0.0-20190129204204-25460a055517/go.mod h1:o5u+nnN0Oa7LBeDYH9QP36qeMPnXV9qbVnbZ4D+Kb0Q=
 github.com/gobuffalo/mw-forcessl v0.0.0-20180802152810-73921ae7a130/go.mod h1:JvNHRj7bYNAMUr/5XMkZaDcw3jZhUZpsmzhd//FFWmQ=
-github.com/gobuffalo/mw-forcessl v0.0.0-20190224202501-6d1ef7ffb276 h1:IBQ1spJCPJpE4qkete2kY7dkPOaqojAsBJP0qOb1g6c=
-github.com/gobuffalo/mw-forcessl v0.0.0-20190224202501-6d1ef7ffb276/go.mod h1:JvNHRj7bYNAMUr/5XMkZaDcw3jZhUZpsmzhd//FFWmQ=
 github.com/gobuffalo/mw-i18n v0.0.0-20180802152014-e3060b7e13d6/go.mod h1:91AQfukc52A6hdfIfkxzyr+kpVYDodgAeT5cjX1UIj4=
 github.com/gobuffalo/mw-i18n v0.0.0-20181027200759-09e0c99be4d3/go.mod h1:1PpGPgqP8VsfUppgBA9FrTOXjI6X9gjqhh/8dmg48lg=
 github.com/gobuffalo/mw-i18n v0.0.0-20190129204410-552713a3ebb4/go.mod h1:rBg2eHxsyxVjtYra6fGy4GSF5C8NysOvz+Znnzk42EM=
@@ -527,6 +525,7 @@ github.com/monoculum/formam v0.0.0-20190307031628-bc555adff0cd h1:IXT4e1P5FWjF2z
 github.com/monoculum/formam v0.0.0-20190307031628-bc555adff0cd/go.mod h1:JKa2av1XVkGjhxdLS59nDoXa2JpmIHpnURWNbzCtXtc=
 github.com/neelance/astrewrite v0.0.0-20160511093645-99348263ae86/go.mod h1:kHJEU3ofeGjhHklVoIGuVj85JJwZ6kWPaJwCIxgnFmo=
 github.com/neelance/sourcemap v0.0.0-20151028013722-8c68805598ab/go.mod h1:Qr6/a/Q4r9LP1IltGz7tA7iOK1WonHEYhu1HRBA7ZiM=
+github.com/nicksnyder/go-i18n v1.10.0 h1:5AzlPKvXBH4qBzmZ09Ua9Gipyruv6uApMcrNZdo96+Q=
 github.com/nicksnyder/go-i18n v1.10.0/go.mod h1:HrK7VCrbOvQoUAQ7Vpy7i87N7JZZZ7R2xBGjv0j365Q=
 github.com/onsi/ginkgo v1.6.0/go.mod h1:lLunBs/Ym6LB5Z9jYTR76FiuTmxDTDusOGeTQH+WWjE=
 github.com/onsi/ginkgo v1.7.0 h1:WSHQ+IS43OoUrWtD1/bbclrwK8TTH5hzp+umCiuxHgs=
@@ -547,6 +546,8 @@ github.com/prometheus/client_golang v0.8.0/go.mod h1:7SWBe2y4D6OKWSNQJUaRYU/AaXP
 github.com/prometheus/client_model v0.0.0-20180712105110-5c3871d89910/go.mod h1:MbSGuTsp3dbXC40dX6PRTWyKYBIrTGTE9sqQNg2J8bo=
 github.com/prometheus/common v0.0.0-20180801064454-c7de2306084e/go.mod h1:daVV7qP5qjZbuso7PdcryaAu0sAZbrN9i7WWcTMWvro=
 github.com/prometheus/procfs v0.0.0-20180725123919-05ee40e3a273/go.mod h1:c3At6R/oaqEKCNdg8wHV1ftS6bRYblBhIjjI8uT2IGk=
+github.com/rakyll/portmidi v0.0.0-20170716032345-1246dd47c560 h1:LxQoLCD5lQzG48j4BYI6CnKNSbnXAL5KL1oZfempXcE=
+github.com/rakyll/portmidi v0.0.0-20170716032345-1246dd47c560/go.mod h1:tO1ylmFo6+hnYFvj/fd92q30wkNQwgWC/8mcHq0KkQU=
 github.com/rogpeppe/go-internal v1.0.0/go.mod h1:M8bDsm7K2OlrFYOpmOWEs/qY81heoFRclV5y23lUDJ4=
 github.com/rogpeppe/go-internal v1.1.0/go.mod h1:M8bDsm7K2OlrFYOpmOWEs/qY81heoFRclV5y23lUDJ4=
 github.com/rogpeppe/go-internal v1.2.2 h1:J7U/N7eRtzjhs26d6GqMh2HBuXP8/Z64Densiiieafo=
@@ -625,8 +626,6 @@ github.com/unrolled/secure v0.0.0-20180918153822-f340ee86eb8b/go.mod h1:mnPT77IA
 github.com/unrolled/secure v0.0.0-20181005190816-ff9db2ff917f/go.mod h1:mnPT77IAdsi/kV7+Es7y+pXALeV3h7G6dQF6mNYjcLA=
 github.com/unrolled/secure v0.0.0-20181022170031-4b6b7cf51606/go.mod h1:mnPT77IAdsi/kV7+Es7y+pXALeV3h7G6dQF6mNYjcLA=
 github.com/unrolled/secure v0.0.0-20190103195806-76e6d4e9b90c/go.mod h1:mnPT77IAdsi/kV7+Es7y+pXALeV3h7G6dQF6mNYjcLA=
-github.com/unrolled/secure v1.0.0 h1:2p4MlT30bNNjaFxA+gtDuLT/73fnXblTC+W/lCzOaZc=
-github.com/unrolled/secure v1.0.0/go.mod h1:mnPT77IAdsi/kV7+Es7y+pXALeV3h7G6dQF6mNYjcLA=
 github.com/xordataexchange/crypt v0.0.3-0.20170626215501-b2862e3d0a77/go.mod h1:aYKd//L2LvnjZzWKhF00oedf4jCCReLcmhLdhm1A27Q=
 go.opencensus.io v0.18.0/go.mod h1:vKdFvxhtzZ9onBp9VKHK8z/sRpBMnKAsufL7wlDrCOA=
 go4.org v0.0.0-20180809161055-417644f6feb5/go.mod h1:MkTOUMDaeVYJUOUsaDXIhWPZYa1yOyC1qaOBpL57BhE=

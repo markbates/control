@@ -4,6 +4,7 @@ import (
 	"log"
 
 	"github.com/markbates/control/actions"
+	"github.com/rakyll/portmidi"
 )
 
 // main is the starting point for your Buffalo application.
@@ -13,6 +14,8 @@ import (
 // call `app.Serve()`, unless you don't want to start your
 // application that is. :)
 func main() {
+	portmidi.Initialize()
+	defer portmidi.Terminate()
 	app := actions.App()
 	if err := app.Serve(); err != nil {
 		log.Fatal(err)
