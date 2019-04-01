@@ -1,6 +1,6 @@
 package transport
 
-import "github.com/rakyll/portmidi"
+import "github.com/markbates/portmidi"
 
 const Status = 144
 

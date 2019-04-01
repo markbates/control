@@ -1,8 +1,6 @@
 package actions
 
 import (
-	"log"
-
 	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/envy"
 	paramlogger "github.com/gobuffalo/mw-paramlogger"
@@ -12,15 +10,17 @@ import (
 
 var ENV = envy.Get("GO_ENV", "development")
 var app *buffalo.App
-var Bus *mcu.Bus
+var Device mcu.Device
 
 func init() {
 	oncer.Do("midi.setup", func() {
-		var err error
-		Bus, err = mcu.New()
-		if err != nil {
-			log.Fatal(err)
-		}
+		Device = mcu.MCU
+		// go func() {
+		// 	err = Bus.Start()
+		// 	if err != nil {
+		// 		log.Fatal(err)
+		// 	}
+		// }()
 	})
 }
 
@@ -29,6 +29,12 @@ func App() *buffalo.App {
 		app = buffalo.New(buffalo.Options{
 			Env:         ENV,
 			SessionName: "_control_session",
+		})
+		app.Use(func(next buffalo.Handler) buffalo.Handler {
+			return func(c buffalo.Context) error {
+				c.Set("device", Device)
+				return next(c)
+			}
 		})
 		// Log request parameters (filters apply).
 		app.Use(paramlogger.ParameterLogger)

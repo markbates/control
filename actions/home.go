@@ -12,15 +12,34 @@ func HomeHandler(c buffalo.Context) error {
 }
 
 func Play(c buffalo.Context) error {
-	if err := Bus.Write(transport.Play); err != nil {
+	if err := Device.Write(transport.Play); err != nil {
 		return err
 	}
 	return c.Render(200, r.JavaScript("play.js"))
 }
 
 func Stop(c buffalo.Context) error {
-	if err := Bus.Write(transport.Stop); err != nil {
+	if err := Device.Write(transport.Stop); err != nil {
 		return err
 	}
 	return c.Render(200, r.JavaScript("stop.js"))
 }
+
+// func Switch(c buffalo.Context) error {
+// 	// in := c.Param("InDeviceID")
+// 	out := c.Param("OutDeviceID")
+//
+// 	// iid, err := strconv.Atoi(in)
+// 	// if err != nil {
+// 	// 	iid = -1
+// 	// }
+// 	oid, err := strconv.Atoi(out)
+// 	if err != nil {
+// 		oid = -1
+// 	}
+// 	Device, err = mcu.Find(portmidi.DeviceID(oid))
+// 	if err != nil {
+// 		return err
+// 	}
+// 	return c.Redirect(301, "/")
+// }
