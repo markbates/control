@@ -42,6 +42,7 @@ func App() *buffalo.App {
 		app.Use(paramlogger.ParameterLogger)
 
 		app.GET("/", HomeHandler)
+		app.ANY("/ws", ws)
 		app.POST("/trigger", Trigger)
 
 		app.ServeFiles("/", assetsBox) // serve files from the public directory

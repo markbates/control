@@ -43,16 +43,20 @@ var MCU = func() Device {
 			continue
 		}
 		d.DeviceInfo = info
-		if info.IsInputAvailable {
-			in, err := portmidi.NewInputStream(id, 128)
-			if err == nil {
-				d.In = in
+		if strings.Contains(info.Name, "MCU In") {
+			if info.IsInputAvailable {
+				in, err := portmidi.NewInputStream(id, 128)
+				if err == nil {
+					d.In = in
+				}
 			}
 		}
-		if info.IsOutputAvailable {
-			out, err := portmidi.NewOutputStream(id, 128, 128)
-			if err == nil {
-				d.Out = out
+		if strings.Contains(info.Name, "MCU Out") {
+			if info.IsOutputAvailable {
+				out, err := portmidi.NewOutputStream(id, 128, 128)
+				if err == nil {
+					d.Out = out
+				}
 			}
 		}
 	}
