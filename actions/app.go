@@ -5,6 +5,7 @@ import (
 	"github.com/gobuffalo/envy"
 	paramlogger "github.com/gobuffalo/mw-paramlogger"
 	"github.com/markbates/control/mcu"
+	"github.com/markbates/control/mcu/transport"
 	"github.com/markbates/oncer"
 )
 
@@ -33,6 +34,7 @@ func App() *buffalo.App {
 		app.Use(func(next buffalo.Handler) buffalo.Handler {
 			return func(c buffalo.Context) error {
 				c.Set("device", Device)
+				c.Set("transportPlay", transport.Play)
 				return next(c)
 			}
 		})
@@ -40,8 +42,7 @@ func App() *buffalo.App {
 		app.Use(paramlogger.ParameterLogger)
 
 		app.GET("/", HomeHandler)
-		app.GET("/play", Play)
-		app.GET("/stop", Stop)
+		app.POST("/trigger", Trigger)
 
 		app.ServeFiles("/", assetsBox) // serve files from the public directory
 	}

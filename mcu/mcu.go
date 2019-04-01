@@ -2,11 +2,9 @@ package mcu
 
 import (
 	"encoding/json"
-	"log"
 	"strings"
 
 	"github.com/markbates/portmidi"
-	"github.com/pkg/errors"
 )
 
 type Device struct {
@@ -16,7 +14,15 @@ type Device struct {
 }
 
 func (d Device) String() string {
-	b, _ := json.Marshal(d)
+	m := map[string]interface{}{
+		"Out": d.Out,
+		"In":  d.In,
+		"Info": map[string]interface{}{
+			"Name":      d.Name,
+			"Interface": d.Interface,
+		},
+	}
+	b, _ := json.Marshal(m)
 	return string(b)
 }
 
@@ -39,22 +45,23 @@ var MCU = func() Device {
 		d.DeviceInfo = info
 		if info.IsInputAvailable {
 			in, err := portmidi.NewInputStream(id, 128)
-			if err != nil {
-				log.Fatal(errors.WithMessage(err, "setting up input: "+info.Name))
+			if err == nil {
+				d.In = in
 			}
-			d.In = in
 		}
 		if info.IsOutputAvailable {
 			out, err := portmidi.NewOutputStream(id, 128, 128)
-			if err != nil {
-				log.Fatal(errors.WithMessage(err, "setting up output: "+info.Name))
+			if err == nil {
+				d.Out = out
 			}
-			d.Out = out
 		}
 	}
-
 	return d
 }()
+
+func (d Device) IsZero() bool {
+	return d.DeviceInfo == nil
+}
 
 // var Devices = func() map[portmidi.DeviceID]Device {
 // 	m := map[portmidi.DeviceID]Device{}

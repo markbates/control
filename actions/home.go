@@ -1,28 +1,35 @@
 package actions
 
 import (
+	"fmt"
+
 	"github.com/gobuffalo/buffalo"
-	"github.com/markbates/control/mcu/transport"
+	"github.com/markbates/control/mcu"
 )
 
 // HomeHandler is a default handler to serve up
 // a home page.
 func HomeHandler(c buffalo.Context) error {
+	if Device.IsZero() {
+		c.Flash().Add("danger", "Could not find an IAC device named MCU")
+	}
 	return c.Render(200, r.HTML("index.html"))
 }
 
-func Play(c buffalo.Context) error {
-	if err := Device.Write(transport.Play); err != nil {
-		return err
-	}
-	return c.Render(200, r.JavaScript("play.js"))
-}
+func Trigger(c buffalo.Context) error {
+	key := c.Param("events")
+	events, ok := mcu.Events.Load(key)
 
-func Stop(c buffalo.Context) error {
-	if err := Device.Write(transport.Stop); err != nil {
-		return err
+	onErr := func(err error) error {
+		c.Set("err", err)
+		return c.Render(200, r.JavaScript("trigger.js"))
 	}
-	return c.Render(200, r.JavaScript("stop.js"))
+
+	if !ok {
+		err := fmt.Errorf("can't find %s", key)
+		return onErr(err)
+	}
+	return onErr(Device.Write(events))
 }
 
 // func Switch(c buffalo.Context) error {

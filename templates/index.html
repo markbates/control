@@ -1,10 +1,9 @@
-<a class="btn btn-default" href="/play" data-remote id="play-btn">
-    <i class="fas fa-play"></i>
-</a>
-<a class="btn btn-default" href="/stop" data-remote id="stop-btn">
+<button class="btn" data-trigger="transport.Stop" id="stop-btn">
     <i class="fas fa-stop"></i>
-</a>
+</button>
 
+<button class="btn" data-trigger="transport.Play" id="play-btn">
+    <i class="fas fa-play"></i>
+</button>
 
-<%= debug(device) %>
-
+<div id="error"></div>
