@@ -8,4 +8,5 @@ const (
 	STOP          = 93
 	FORWARD       = 92
 	REWIND        = 91
+	SAVE          = 80
 )

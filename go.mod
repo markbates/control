@@ -14,7 +14,6 @@ require (
 	github.com/markbates/oncer v0.0.0-20181203154359-bf2de49a0be2
 	github.com/markbates/portmidi v0.0.0-20190401141759-18c24bff228d
 	github.com/markbates/safe v1.0.1
-	github.com/spf13/afero v1.2.1 // indirect
 )
 
 replace github.com/markbates/portmidi => ../portmidi

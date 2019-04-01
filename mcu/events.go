@@ -15,6 +15,7 @@ var Events = func() EventMap {
 	e.Store("transport.Record", transport.Record)
 	e.Store("transport.Forward", transport.Forward)
 	e.Store("transport.Rewind", transport.Rewind)
+	e.Store("transport.Save", transport.Save)
 	return e
 }()
 

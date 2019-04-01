@@ -73,3 +73,16 @@ var Rewind = []portmidi.Event{
 		Data2:  codes.OFF,
 	},
 }
+
+var Save = []portmidi.Event{
+	{
+		Status: CODE,
+		Data1:  codes.SAVE,
+		Data2:  codes.ON,
+	},
+	{
+		Status: CODE,
+		Data1:  codes.SAVE,
+		Data2:  codes.OFF,
+	},
+}
